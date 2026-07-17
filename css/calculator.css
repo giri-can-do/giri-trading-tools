@@ -1,0 +1,153 @@
+.calculator-section {
+    padding: 60px 0 90px;
+}
+
+.calculator-header {
+    max-width: 760px;
+    margin-bottom: 40px;
+}
+
+.calculator-header h1 {
+    margin: 18px 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.calculator-header p,
+.result-note {
+    color: var(--text-muted);
+}
+
+.back-link {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+.calculator-card {
+    padding: 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+}
+
+.calculator-card h2 {
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--primary);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px;
+    color: var(--text-color);
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font: inherit;
+}
+
+.input-prefix,
+.input-suffix {
+    padding: 0 12px;
+    color: var(--text-muted);
+}
+
+.calculator-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.btn {
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.result-list {
+    display: grid;
+    gap: 14px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.result-item span {
+    color: var(--text-muted);
+}
+
+.result-primary strong {
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+
+.result-note {
+    margin-top: 22px;
+    font-size: 0.9rem;
+}
+
+.form-error {
+    min-height: 24px;
+    color: #fca5a5;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .calculator-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-actions {
+        flex-direction: column;
+    }
+
+    .calculator-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.status-affordable {
+    color: #4ade80;
+}
+
+.status-insufficient {
+    color: #f87171;
+}

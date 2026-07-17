@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Position Size Calculator | Giri Trading Tools</title>
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/calculator.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../../index.html">
+                <span class="logo-icon">📈</span>
+                Giri Trading Tools
+            </a>
+
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#tools">Tools</a></li>
+                <li><a href="../../index.html#philosophy">Philosophy</a></li>
+                <li>
+                    <a href="https://github.com/giri-can-do/giri-trading-tools"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="calculator-section">
+        <div class="container">
+
+            <div class="calculator-header">
+                <a class="back-link" href="../../index.html#tools">
+                    ← All Trading Tools
+                </a>
+
+                <h1>📊 Position Size Calculator</h1>
+
+                <p>
+                    Calculate the number of shares you can trade while keeping
+                    your maximum loss within your risk limit.
+                </p>
+            </div>
+
+            <div class="calculator-layout">
+
+                <form id="positionSizeForm" class="calculator-card" novalidate>
+                    <h2>Trade Details</h2>
+
+                    <div class="form-group">
+                        <label for="accountSize">Account Size</label>
+
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input
+                                type="number"
+                                id="accountSize"
+                                name="accountSize"
+                                min="0"
+                                step="0.01"
+                                placeholder="5000"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="riskPercent">Risk Per Trade</label>
+
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="riskPercent"
+                                name="riskPercent"
+                                min="0"
+                                max="100"
+                                step="0.01"
+                                placeholder="1"
+                                required
+                            >
+                            <span class="input-suffix">%</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="entryPrice">Entry Price</label>
+
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input
+                                type="number"
+                                id="entryPrice"
+                                name="entryPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="25.50"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stopPrice">Stop-Loss Price</label>
+
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input
+                                type="number"
+                                id="stopPrice"
+                                name="stopPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="24.80"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div id="formError" class="form-error" role="alert"></div>
+
+                    <div class="calculator-actions">
+                        <button type="submit" class="btn">
+                            Calculate
+                        </button>
+
+                        <button type="reset" class="btn btn-secondary">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+
+                <section class="calculator-card results-card"
+                         aria-live="polite">
+                    <h2>Calculation Result</h2>
+
+                    <div class="result-list">
+                        <div class="result-item">
+                            <span>Maximum Risk</span>
+                            <strong id="riskAmount">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Risk Per Share</span>
+                            <strong id="riskPerShare">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Risk-Based Shares</span>
+                            <strong id="recommendedShares">0 shares</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Buying Power Needed</span>
+                            <strong id="buyingPowerNeeded">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Available Cash</span>
+                            <strong id="availableCash">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Maximum Affordable Shares</span>
+                            <strong id="affordableShares">0 shares</strong>
+                        </div>
+
+                        <div class="result-item result-primary">
+                            <span>Actual Position Size</span>
+                            <strong id="actualShares">0 shares</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Actual Position Value</span>
+                            <strong id="positionValue">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Actual Risk at Stop</span>
+                            <strong id="actualRisk">$0.00</strong>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Buying Power Status</span>
+                            <strong id="buyingPowerStatus">—</strong>
+                        </div>
+                    </div>
+
+                    <p class="result-note">
+                        The calculator limits the final position size to the number of
+                        shares affordable with the available cash.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Giri Trading Tools</p>
+        <p>Part of the Giri Can Do ecosystem.</p>
+    </div>
+</footer>
+
+<script src="../../js/position-size.js"></script>
+</body>
+</html>
