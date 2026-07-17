@@ -19,19 +19,32 @@
 <header>
     <div class="container">
         <nav>
-            <a class="logo" href="../../index.html">
+            <a class="logo" href="index.html">
                 <span class="logo-icon">📈</span>
                 Giri Trading Tools
             </a>
 
-            <ul>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../index.html#tools">Tools</a></li>
                 <li><a href="../../index.html#philosophy">Philosophy</a></li>
                 <li>
-                    <a href="https://github.com/giri-can-do/giri-trading-tools"
-                       target="_blank"
-                       rel="noopener noreferrer">
+                    <a
+                        href="https://github.com/giri-can-do/giri-trading-tools"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         GitHub
                     </a>
                 </li>
@@ -219,5 +232,6 @@
 </footer>
 
 <script src="../../js/position-size.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>
