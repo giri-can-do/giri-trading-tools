@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Position Size Calculator | Giri Trading Tools</title>
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/calculator.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html">
+                <span class="logo-icon">📈</span>
+                Giri Trading Tools
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#tools">Tools</a></li>
+                <li><a href="../../index.html#philosophy">Philosophy</a></li>
+                <li>
+                    <a
+                        href="https://github.com/giri-can-do/giri-trading-tools"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="calculator-section">
+        <div class="container">
+
+            <div class="calculator-header">
+
+                <a class="back-link" href="../../index.html#tools">
+                    ← All Trading Tools
+                </a>
+
+                <h1>⏱ Trade Timer</h1>
+
+                <p>
+                    Stay disciplined by limiting your trading session
+                    to your planned time window.
+                </p>
+
+            </div>
+
+            <div class="calculator-layout">
+
+                <form class="calculator-card" id="tradeTimerForm">
+
+                    <h2>Trading Session</h2>
+
+                    <div class="preset-buttons">
+
+                        <button type="button" class="preset-btn" data-minutes="5">5m</button>
+
+                        <button type="button" class="preset-btn" data-minutes="15">15m</button>
+
+                        <button type="button" class="preset-btn" data-minutes="30">30m</button>
+
+                        <button type="button" class="preset-btn" data-minutes="60">60m</button>
+
+                        <button type="button" class="preset-btn" data-minutes="90">90m</button>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Custom Minutes</label>
+
+                        <input
+                            type="number"
+                            id="customMinutes"
+                            min="1"
+                            placeholder="45"
+                        >
+
+                    </div>
+
+                    <div class="calculator-actions">
+
+                        <button type="button" id="startBtn" class="btn">
+                            Start
+                        </button>
+
+                        <button type="button" id="pauseBtn" class="btn btn-secondary">
+                            Pause
+                        </button>
+
+                        <button type="button" id="resetBtn" class="btn btn-secondary">
+                            Reset
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <section class="calculator-card">
+
+                    <h2>Session Status</h2>
+
+                    <div class="result-list">
+
+                        <span>Remaining Time</span>
+                        <strong id="remainingTime">00:00</strong>
+                        
+
+                        <div class="result-item">
+                            <span>Elapsed Time</span>
+                            <strong id="elapsedTime">00:00</strong>
+                        </div>
+
+                        <div class="result-item result-primary">
+                            <span>Status</span>
+                            <strong id="timerStatus">
+                                Ready
+                            </strong>
+                        </div>
+
+                        <div class="timer-progress-section">
+                            <span>Trading Session</span>
+
+                            <div class="progress-container">
+                                <div id="progressBar" class="progress-bar"></div>
+                            </div>
+
+                            <strong id="progressText">0%</strong>
+                        </div>
+
+                        <div class="discipline-reminder">
+                            <span>Discipline Reminder</span>
+
+                            <p id="disciplineReminder">
+                                Prepare your session and follow your trading plan.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Giri Trading Tools</p>
+        <p>Part of the Giri Can Do ecosystem.</p>
+    </div>
+</footer>
+
+<script src="../../js/trade-timer.js"></script>
+<script src="../../js/common.js"></script>
+</body>
+</html>

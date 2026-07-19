@@ -155,3 +155,186 @@
 .status-warning {
     color: #facc15;
 }
+
+/* Trade Timer */
+.preset-buttons{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.preset-btn{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:var(--card-bg);
+    color:var(--text-color);
+    border:1px solid var(--border-color);
+}
+
+.preset-btn:hover{
+    border-color:var(--primary);
+}
+
+#customMinutes {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+}
+
+#customMinutes:focus {
+    border-color: var(--primary);
+}
+
+.preset-btn.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.status-ready{
+    color:#38bdf8;
+}
+
+.status-running{
+    color:#4ade80;
+}
+
+.status-paused{
+    color:#facc15;
+}
+
+.status-finished{
+    color:#f87171;
+}
+
+#remainingTime{
+    font-size:3rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.progress-container{
+    width:100%;
+    height:12px;
+    background:var(--bg-color);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:var(--primary);
+    transition:width .3s ease;
+}
+
+.timer-display{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px 0 30px;
+}
+
+#remainingTime{
+    font-size:3.5rem;
+    font-weight:700;
+    color:var(--primary);
+    letter-spacing:2px;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--card-bg);
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+.btn:disabled:hover {
+    background: var(--card-bg);
+    color: var(--text-muted);
+    border-color: var(--border-color);
+    transform: none;
+    box-shadow: none;
+}
+
+.timer-progress-section,
+.discipline-reminder {
+    margin-top: 24px;
+}
+
+.timer-progress-section > span,
+.discipline-reminder > span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.progress-container {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    background: var(--bg-color);
+    border-radius: 999px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#progressText {
+    display: block;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.discipline-reminder {
+    padding: 18px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.discipline-reminder p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.timer-warning {
+    color: #fb923c !important;
+}
+
+.timer-critical {
+    color: #f87171 !important;
+}
+
+.progress-warning {
+    background: #fb923c;
+}
+
+.progress-critical {
+    background: #f87171;
+}
+
+.calculator-actions .btn.btn-success {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+}
+
+.calculator-actions .btn.btn-success:not(:disabled):hover {
+    background-color: #15803d;
+    border-color: #15803d;
+}
